@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Spring web </title>
+    <div th:replace="fragments/link :: link"></div>
+</head>
+<body>
+  <!-- HEADER -->
+  <div th:replace="fragments/header :: header"></div>
+  <!-- HEADER -->
+
+  <div class="container mt-4">
+    <h2 class="h2">Liste des personnes</h2>
+    <table class="table table-stripped">
+      <head>
+        <tr>
+          <th>Prénom</th>
+          <th>Nom</th>
+        </tr>
+      </head>
+      <tbody>
+        <tr th:each="person:${listPersons}">
+          <td th:text="${person.firstName}"></td>
+          <td th:text="${person.lastName}"></td>
+          <td>
+            <a th:href="@{/updateperson/{id}(id=${person.id})}"><button class="btn btn-info">Modifier</button></a>
+            <a th:href="@{/deleteperson/{id}(id=${person.id})}"><button class="btn btn-danger">Supprimer</button></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a th:href="@{/createperson}"><button class="btn btn-success">Ajouter une nouvelle personne</button></a>
+  </div>
+
+  <!-- SCRIPT -->
+  <div th:replace="fragments/script :: script"></div>
+  <!-- SCRIPT -->
+</body>
+</html>

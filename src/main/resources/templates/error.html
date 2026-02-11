@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error page</title>
+    <link th:replace="fragments/link :: link"/>
+</head>
+<body>
+    <!-- HEADER -->
+    <div th:replace="fragments/header :: header"></div>
+    <!-- HEADER -->
+
+    <section class="container">
+        <table class="table">
+            <tr>
+                <td>Error Message</td>
+                <td th:text="${message}"></td>
+            </tr>
+            <tr>
+                <td>Status Code</td>
+                <td th:text="${status}"></td>
+            </tr>
+            <tr>
+                <td>Exception</td>
+                <td th:text="${exception}"></td>
+            </tr>
+            <tr>
+                <td>Stacktrace</td>
+                <td><pre th:text="${trace}"></pre></td>
+            </tr>
+            <tr>
+                <td>Binding Errors</td>
+                <td th:text="${errors}"></td>
+            </tr>
+        </table>
+    </section>
+
+
+    <!-- SCRIPT -->
+    <div th:replace="fragments/script :: script"></div>
+    <!-- SCRIPT -->
+</body>
+</html>
