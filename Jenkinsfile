@@ -29,7 +29,6 @@ pipeline{
                 bat 'mvn clean package'
             }
         }
-
         stage('Build Docker Image'){
             steps{
                 script{
@@ -37,13 +36,11 @@ pipeline{
                 }
             }
         }
-
         stage('Push to Docker Hub'){
             docker.withRegistry('', registryCredential){
                 docker.image('juliuselgringo/webappspring').push()
             }
         }
-
         stage('Deploy docker-compose'){
             steps{
                 script{
