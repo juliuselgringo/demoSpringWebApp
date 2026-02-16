@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment{
         registry = "juliuselgringo/webappspring"
-        registryCredential = 'juliuselgringo'
+        registryCredential = 'docker'
         dockerImage = ''
     }
     tools{
