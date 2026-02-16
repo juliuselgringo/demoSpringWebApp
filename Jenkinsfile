@@ -6,7 +6,7 @@ pipeline{
         dockerImage = ''
     }
     tools{
-        maven 'maven'
+        maven 'Maven'
         jdk 'JDK21'
     }
     stages{
