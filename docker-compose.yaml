@@ -27,7 +27,7 @@ services:
     ports:
       - "8081:8081"
     environment:
-      - FR.JULIUSELGRINGO.DEMOSPRINGWEBAPP.APIURL=${URL_API}
+      - FR.JULIUSELGRINGO.DEMOSPRINGWEBAPP.APIURL=http://api:8080
     restart: always
   phpmyadmin:
     depends_on:
