@@ -43,5 +43,13 @@ pipeline{
                 docker.image('juliuselgringo/webappspring').push()
             }
         }
+
+        stage('Deploy docker-compose'){
+            steps{
+                script{
+                    bat 'docker-compose up -d --build --force-recreate --remove-orphans'
+                }
+            }
+        }
     }
 }
