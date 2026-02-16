@@ -18,7 +18,7 @@ services:
       - "8080:8080"
     environment:
       - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.MySQLDialect
-      - SPRING_DATASOURCE_URL=${URL_BDD}
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/gestbook
     restart: always
   webapp:
     depends_on:
