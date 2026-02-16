@@ -10,6 +10,11 @@ pipeline{
         jdk 'JDK21'
     }
     stages{
+        stage('Clean workspace'){
+            steps{
+                cleanWs()
+            }
+        }
         stage('Git Checkout'){
             steps{
                 script{
@@ -17,11 +22,6 @@ pipeline{
                         credentialsId: 'jenkins',
                         url: 'https://github.com/juliuselgringo/demoSpringWebApp.git'
                 }
-            }
-        }
-        stage('Clean workspace'){
-            steps{
-                cleanWs()
             }
         }
         stage('Build Maven'){
