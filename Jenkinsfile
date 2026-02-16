@@ -37,8 +37,12 @@ pipeline{
             }
         }
         stage('Push to Docker Hub'){
-            docker.withRegistry('', registryCredential){
-                docker.image('juliuselgringo/webappspring').push()
+            steps{
+                script{
+                    docker.withRegistry('', registryCredential){
+                        docker.image('juliuselgringo/webappspring').push()
+                    }
+                }
             }
         }
         stage('Deploy docker-compose'){
