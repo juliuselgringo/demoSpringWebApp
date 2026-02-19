@@ -13,7 +13,7 @@ services:
   api:
     depends_on:
       - db
-    image: api_image
+    image: juliuselgringo/apispringboot
     ports:
       - "8080:8080"
     environment:
@@ -23,7 +23,7 @@ services:
   webapp:
     depends_on:
       - api
-    image: webapp_image
+    image: juliuselgringo/webappspring
     ports:
       - "8081:8081"
     environment:
